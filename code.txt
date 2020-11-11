@@ -9,12 +9,15 @@ public class salesforceE2E {
 		System.setProperty("webdriver.chrome.driver", "C://work//chromedriver.exe");
 		String title ="Rediff.com: News | Rediffmail | Stock Quotes | Shopping";
 		WebDriver driver =new ChromeDriver();
+		//Source URL
 		driver.get("http://rediff.com");
 		driver.findElement(By.cssSelector("a[title*='Sign in']")).click();
 		driver.findElement(By.xpath("//input[@id='login1']")).sendKeys("hello");
 		driver.findElement(By.cssSelector("input#password")).sendKeys("goodbye");
 		driver.findElement(By.xpath("//input[contains(@name,'procee')]")).click();
+		//Get the title
 		System.out.println(driver.getTitle());
+		//Title Validation Check
 		String webTitle = driver.getTitle();
 		if(title.contentEquals(webTitle))
 		{
